@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <title>EV Software Research Brief</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">EV POWERTRAIN · VCU · AUTOMOTIVE SOFTWARE</p>
+          <h1>Two useful industry reads, every day.</h1>
+          <p class="subtle">
+            Current automotive software developments translated into practical learning,
+            VCU context, and interview questions.
+          </p>
+        </div>
+        <div class="run-picker">
+          <label for="runSelect">Research run</label>
+          <select id="runSelect" aria-label="Select research run"></select>
+        </div>
+      </header>
+
+      <section class="summary" aria-label="Run summary">
+        <div class="stat"><span id="articleCount">—</span><small>briefs</small></div>
+        <div class="stat"><span id="categoryCount">—</span><small>categories</small></div>
+        <div class="stat"><span id="sourceCount">—</span><small>sources</small></div>
+        <div class="stat provider"><span id="providerName">—</span><small>generator</small></div>
+      </section>
+
+      <section class="toolbar">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="todo">To learn</button>
+          <button class="filter" data-filter="done">Reviewed</button>
+          <select id="categorySelect" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <p id="generatedAt" class="timestamp"></p>
+      </section>
+
+      <section id="articles" class="article-grid" aria-live="polite"></section>
+      <div id="emptyState" class="empty" hidden>No briefs match this filter.</div>
+
+      <footer>
+        Review status is stored only in this browser. Source links open the original article.
+      </footer>
+    </main>
+
+    <template id="articleTemplate">
+      <article class="article-card">
+        <div class="card-top">
+          <div class="meta-row">
+            <span class="category-badge"></span>
+            <span class="source-name"></span>
+          </div>
+          <span class="review-badge">To learn</span>
+        </div>
+        <h2 class="headline"></h2>
+        <p class="source-title"></p>
+        <p class="summary-text"></p>
+
+        <section class="insight">
+          <h3>Why this matters for VCU work</h3>
+          <p class="why-text"></p>
+        </section>
+
+        <div class="concepts"></div>
+
+        <details>
+          <summary>Interview questions</summary>
+          <ol class="questions"></ol>
+        </details>
+
+        <section class="next-step">
+          <strong>Next step</strong>
+          <span class="next-step-text"></span>
+        </section>
+
+        <div class="actions">
+          <a class="primary source-link" target="_blank" rel="noopener noreferrer">Open source article</a>
+          <button class="copy-button">Copy brief</button>
+          <button class="status-button">Mark reviewed</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
