@@ -23,8 +23,9 @@ RUNS_PATH = ROOT / "frontend" / "data" / "runs"
 console = Console()
 
 
-def load_seen_state() -> tuple[set[str], set[str]]:
+def load_seen_state() -> tuple[set[str], int, set[str]]:
     seen_technologies: set[str] = set()
+    technology_runs = 0
     seen_industry: set[str] = set()
     paths = list(RUNS_PATH.glob("ev_research_*.json")) if RUNS_PATH.exists() else []
     if OUTPUT_PATH.exists():
@@ -38,12 +39,13 @@ def load_seen_state() -> tuple[set[str], set[str]]:
 
         for article in data.get("articles", []):
             if article.get("content_type") == "technology":
+                technology_runs += 1
                 if article.get("tool_id"):
                     seen_technologies.add(article["tool_id"])
             elif article.get("id"):
                 seen_industry.add(article["id"])
 
-    return seen_technologies, seen_industry
+    return seen_technologies, technology_runs, seen_industry
 
 
 def save_run(articles: list[dict]) -> Path:
@@ -70,8 +72,8 @@ def main() -> None:
         raise SystemExit("Expected exactly 2 briefs: 1 technology + 1 industry update.")
 
     console.print(Panel.fit("EV / VCU Daily Learning", style="bold cyan"))
-    seen_technologies, seen_industry = load_seen_state()
-    technology = select_next_technology(seen_technologies)
+    seen_technologies, technology_runs, seen_industry = load_seen_state()
+    technology = select_next_technology(seen_technologies, technology_runs)
 
     news_sources = AutomotiveNewsFetcher().fetch()
     industry_source = select_industry_update(news_sources, seen_industry)

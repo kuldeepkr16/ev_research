@@ -443,10 +443,13 @@ TECHNOLOGY_ROADMAP: list[dict[str, Any]] = [
 ]
 
 
-def select_next_technology(seen_ids: set[str]) -> dict[str, Any]:
-    """Pick the next unseen topic; restart the roadmap after a full cycle."""
+def select_next_technology(
+    seen_ids: set[str],
+    completed_runs: int = 0,
+) -> dict[str, Any]:
+    """Pick the next unseen topic, then rotate cleanly on later cycles."""
     for topic in TECHNOLOGY_ROADMAP:
         if topic["id"] not in seen_ids:
             return topic
 
-    return TECHNOLOGY_ROADMAP[0]
+    return TECHNOLOGY_ROADMAP[completed_runs % len(TECHNOLOGY_ROADMAP)]
