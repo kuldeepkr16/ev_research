@@ -1,4 +1,20 @@
 {
-  "updated_at": "2026-10-03T13:20:53.515417+00:00",
-  "runs": []
+  "updated_at": "2026-10-03T13:36:38.217361+00:00",
+  "runs": [
+    {
+      "generated_at": "2026-10-03T19:06:38.107305+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Cybersecurity",
+        "Software Architecture"
+      ],
+      "sources": [
+        "Motorindia",
+        "evreporter.com"
+      ],
+      "path": "data/runs/ev_research_20261003_190638.json",
+      "filename": "ev_research_20261003_190638.json"
+    }
+  ]
 }
