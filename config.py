@@ -1,4 +1,4 @@
-"""Configuration for the EV / VCU industry research dashboard."""
+"""Configuration for the EV / VCU learning dashboard."""
 
 from __future__ import annotations
 
@@ -25,22 +25,22 @@ LOOKBACK_DAYS = int(os.getenv("LOOKBACK_DAYS", "7"))
 TOPIC_QUERIES = [
     {
         "category": "Communication",
-        "query": "automotive Ethernet SOME/IP CAN XL zonal architecture",
-        "keywords": ["ethernet", "some/ip", "someip", "can xl", "can fd", "tsn"],
+        "query": "automotive Ethernet SOME/IP CAN XL CAN FD zonal architecture engineering",
+        "keywords": ["ethernet", "some/ip", "someip", "can xl", "can fd", "tsn", "zonal"],
     },
     {
         "category": "Software Architecture",
-        "query": "software defined vehicle AUTOSAR adaptive automotive architecture",
+        "query": "software defined vehicle AUTOSAR adaptive zonal automotive software engineering",
         "keywords": ["software-defined vehicle", "sdv", "autosar", "adaptive", "zonal"],
     },
     {
         "category": "Diagnostics & OTA",
-        "query": "automotive diagnostics UDS DoIP OTA vehicle software",
+        "query": "automotive diagnostics UDS DoIP OTA vehicle software engineering",
         "keywords": ["uds", "doip", "diagnostic", "ota", "over-the-air"],
     },
     {
         "category": "Safety & Process",
-        "query": "ISO 26262 Automotive SPICE functional safety EV software",
+        "query": "ISO 26262 Automotive SPICE functional safety EV software engineering",
         "keywords": ["iso 26262", "aspice", "automotive spice", "functional safety"],
     },
     {
@@ -50,26 +50,44 @@ TOPIC_QUERIES = [
     },
     {
         "category": "EV Powertrain",
-        "query": "electric vehicle VCU torque control battery powertrain software",
-        "keywords": ["vcu", "torque", "powertrain", "battery", "inverter", "ev"],
+        "query": "electric vehicle VCU BMS inverter torque control powertrain software engineering",
+        "keywords": ["vcu", "bms", "torque", "powertrain", "battery", "inverter", "ev"],
     },
     {
         "category": "Cybersecurity",
-        "query": "automotive cybersecurity ISO 21434 UNECE R155 vehicle software",
+        "query": "automotive cybersecurity ISO 21434 UNECE R155 vehicle software engineering",
         "keywords": ["iso 21434", "r155", "cybersecurity", "secure boot"],
     },
     {
-        "category": "Development Tools",
-        "query": "automotive embedded software CI CD calibration CANoe INCA MATLAB Simulink",
-        "keywords": ["canoe", "canalyzer", "inca", "simulink", "ci/cd", "calibration"],
+        "category": "Open Automotive Software",
+        "query": "open source automotive software Eclipse SDV COVESA vehicle software",
+        "keywords": ["open source", "eclipse", "covesa", "sdv", "middleware"],
     },
+]
+
+NEWS_NOISE_TERMS = [
+    "share price",
+    "stock price",
+    "market cap",
+    "quarterly results",
+    "sales report",
+    "sales rise",
+    "sales fall",
+    "discount",
+    "price cut",
+    "booking opens",
+    "delivery begins",
+    "road test",
+    "range test",
 ]
 
 LEARNING_FOCUS = """
 The reader is a Model-Based Developer working on Vehicle Control Unit software
 for EV powertrains. They already use MATLAB/Simulink, CAN, CANalyzer and INCA.
-The brief should help them learn current global automotive software practices
-and prepare for interviews in EV powertrain, VCU and embedded automotive roles.
+The dashboard should help them understand modern/open-source engineering tools,
+where those tools replace or complement the current proprietary stack, and
+current EV/automotive engineering changes that matter for future roles and
+interviews.
 """
 
 

@@ -4,30 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f9fc" />
-    <title>EV Software Research Brief</title>
+    <title>EV Software Daily Learning</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="shell">
       <header class="hero">
         <div>
-          <p class="eyebrow">EV POWERTRAIN · VCU · AUTOMOTIVE SOFTWARE</p>
-          <h1>Two useful industry reads, every day.</h1>
+          <p class="eyebrow">EV POWERTRAIN · VCU · MODERN AUTOMOTIVE SOFTWARE</p>
+          <h1>One technology to learn. One engineering update. Every day.</h1>
           <p class="subtle">
-            Current automotive software developments translated into practical learning,
-            VCU context, and interview questions.
+            Build long-term knowledge of open-source automotive tooling while staying current
+            with the EV and vehicle-software changes that matter to VCU engineers.
           </p>
         </div>
         <div class="run-picker">
-          <label for="runSelect">Research run</label>
+          <label for="runSelect">Daily run</label>
           <select id="runSelect" aria-label="Select research run"></select>
         </div>
       </header>
 
       <section class="summary" aria-label="Run summary">
-        <div class="stat"><span id="articleCount">—</span><small>briefs</small></div>
-        <div class="stat"><span id="categoryCount">—</span><small>categories</small></div>
-        <div class="stat"><span id="sourceCount">—</span><small>sources</small></div>
+        <div class="stat"><span id="articleCount">—</span><small>daily briefs</small></div>
+        <div class="stat"><span id="techCount">—</span><small>technology deep dive</small></div>
+        <div class="stat"><span id="industryCount">—</span><small>industry update</small></div>
         <div class="stat provider"><span id="providerName">—</span><small>generator</small></div>
       </section>
 
@@ -47,7 +47,8 @@
       <div id="emptyState" class="empty" hidden>No briefs match this filter.</div>
 
       <footer>
-        Review status is stored only in this browser. Source links open the original article.
+        Technology cards link to official project documentation. Industry cards link to the original article.
+        Review status is stored only in this browser.
       </footer>
     </main>
 
@@ -55,18 +56,41 @@
       <article class="article-card">
         <div class="card-top">
           <div class="meta-row">
+            <span class="stream-badge"></span>
             <span class="category-badge"></span>
             <span class="source-name"></span>
           </div>
           <span class="review-badge">To learn</span>
         </div>
+
         <h2 class="headline"></h2>
         <p class="source-title"></p>
         <p class="summary-text"></p>
 
+        <section class="comparison" hidden>
+          <h3>What does this replace or complement?</h3>
+          <div class="comparison-grid">
+            <div>
+              <span>Current stack</span>
+              <strong class="current-stack"></strong>
+            </div>
+            <div>
+              <span>Relationship</span>
+              <strong class="relationship"></strong>
+            </div>
+          </div>
+          <p class="comparison-note"></p>
+          <p class="limitations"></p>
+        </section>
+
         <section class="insight">
           <h3>Why this matters for VCU work</h3>
           <p class="why-text"></p>
+        </section>
+
+        <section class="practical" hidden>
+          <h3>Try it</h3>
+          <p class="practical-text"></p>
         </section>
 
         <div class="concepts"></div>
@@ -82,7 +106,7 @@
         </section>
 
         <div class="actions">
-          <a class="primary source-link" target="_blank" rel="noopener noreferrer">Open source article</a>
+          <a class="primary source-link" target="_blank" rel="noopener noreferrer">Open source</a>
           <button class="copy-button">Copy brief</button>
           <button class="status-button">Mark reviewed</button>
         </div>

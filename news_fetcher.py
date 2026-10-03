@@ -1,4 +1,4 @@
-"""Fetch recent automotive/EV software news from Google News RSS feeds."""
+"""Fetch one recent engineering-relevant EV/automotive industry update."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import feedparser
 from bs4 import BeautifulSoup
 from dateutil import parser as date_parser
 
-from config import TOPIC_QUERIES, google_news_feed
+from config import NEWS_NOISE_TERMS, TOPIC_QUERIES, google_news_feed
 
 
 def _clean_html(value: str) -> str:
@@ -40,6 +40,11 @@ def _article_id(title: str, url: str) -> str:
     return hashlib.sha1(raw).hexdigest()[:16]
 
 
+def _is_noise(title: str, summary: str) -> bool:
+    haystack = f"{title} {summary}".lower()
+    return any(term in haystack for term in NEWS_NOISE_TERMS)
+
+
 class AutomotiveNewsFetcher:
     def fetch(self) -> list[dict[str, Any]]:
         items: list[dict[str, Any]] = []
@@ -55,7 +60,11 @@ class AutomotiveNewsFetcher:
                 url = entry.get("link", "")
                 if not title or not url:
                     continue
+
                 summary = _clean_html(entry.get("summary", entry.get("description", "")))
+                if _is_noise(title, summary):
+                    continue
+
                 published_text = entry.get("published", entry.get("updated", ""))
                 published_dt = _parse_date(published_text)
                 source_obj = entry.get("source") or {}
@@ -97,35 +106,13 @@ class AutomotiveNewsFetcher:
         )
 
 
-def select_articles(
+def select_industry_update(
     articles: list[dict[str, Any]],
-    count: int,
     seen_ids: set[str] | None = None,
-) -> list[dict[str, Any]]:
-    """Prefer unseen sources and different categories, while guaranteeing count if possible."""
+) -> dict[str, Any] | None:
+    """Prefer the highest-ranked unseen engineering update."""
     seen_ids = seen_ids or set()
-    unseen = [article for article in articles if article["id"] not in seen_ids]
-    candidates = unseen if len(unseen) >= count else unseen + [
-        article for article in articles if article["id"] in seen_ids
-    ]
-
-    selected: list[dict[str, Any]] = []
-    used_categories: set[str] = set()
-
-    for article in candidates:
-        if article["category"] in used_categories:
-            continue
-        selected.append(article)
-        used_categories.add(article["category"])
-        if len(selected) == count:
-            return selected
-
-    selected_ids = {article["id"] for article in selected}
-    for article in candidates:
-        if article["id"] in selected_ids:
-            continue
-        selected.append(article)
-        if len(selected) == count:
-            break
-
-    return selected
+    for article in articles:
+        if article["id"] not in seen_ids:
+            return article
+    return articles[0] if articles else None
