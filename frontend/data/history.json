@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-03T13:36:38.217361+00:00",
+  "updated_at": "2026-10-04T12:57:18.008465+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-04T18:27:17.907657+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Modeling & Simulation",
+        "Software Architecture"
+      ],
+      "sources": [
+        "EVreporter",
+        "OpenModelica"
+      ],
+      "path": "data/runs/ev_research_20261004_182717.json",
+      "filename": "ev_research_20261004_182717.json"
+    },
     {
       "generated_at": "2026-10-03T19:06:38.107305+05:30",
       "ai_provider": "groq",
