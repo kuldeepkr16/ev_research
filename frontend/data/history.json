@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-04T12:57:18.008465+00:00",
+  "updated_at": "2026-10-05T02:09:31.894646+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-05T07:39:31.792766+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Cybersecurity",
+        "Modeling & Simulation"
+      ],
+      "sources": [
+        "Cyber Magazine",
+        "Scilab"
+      ],
+      "path": "data/runs/ev_research_20261005_073931.json",
+      "filename": "ev_research_20261005_073931.json"
+    },
     {
       "generated_at": "2026-10-04T18:27:17.907657+05:30",
       "ai_provider": "groq",
