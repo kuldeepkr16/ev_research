@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-05T02:09:31.894646+00:00",
+  "updated_at": "2026-10-06T03:09:39.598472+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-06T08:39:39.503327+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Controls Engineering",
+        "Cybersecurity"
+      ],
+      "sources": [
+        "Automotive IQ",
+        "python-control"
+      ],
+      "path": "data/runs/ev_research_20261006_083939.json",
+      "filename": "ev_research_20261006_083939.json"
+    },
     {
       "generated_at": "2026-10-05T07:39:31.792766+05:30",
       "ai_provider": "groq",
