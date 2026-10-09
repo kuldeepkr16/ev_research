@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-08T02:46:56.462599+00:00",
+  "updated_at": "2026-10-09T02:59:49.247632+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-09T08:29:49.139928+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Model Integration",
+        "Testing & Validation"
+      ],
+      "sources": [
+        "Automotive Testing Technology International",
+        "Modelica Association"
+      ],
+      "path": "data/runs/ev_research_20261009_082949.json",
+      "filename": "ev_research_20261009_082949.json"
+    },
     {
       "generated_at": "2026-10-08T08:16:56.354293+05:30",
       "ai_provider": "groq",
