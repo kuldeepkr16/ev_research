@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-11T07:30:56.636528+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-python-can-cantools",
+      "content_type": "technology",
+      "tool_id": "python-can-cantools",
+      "tool_name": "python-can + cantools",
+      "headline": "python‑can + cantools: Open‑Source CAN Automation for VCU Development",
+      "summary": "python‑can is a Python library that gives programmatic access to a CAN bus via many hardware back‑ends. cantools builds on it by parsing DBC files, encoding/decoding signals, and providing database utilities. Together they enable scripted CAN traffic, DBC‑driven signal handling, and custom test automation, but they require you to stitch together visualization, simulation, and diagnostics yourself.",
+      "why_it_matters": "For a model‑based VCU developer, the pair offers a scriptable, language‑agnostic way to generate and validate CAN messages directly from Simulink‑exported data. It also lets you prototype test benches without buying proprietary CANoe/INCA licenses, accelerating early‑stage verification.",
+      "current_stack": "CANalyzer/CANoe scripting and DBC-based analysis",
+      "relationship": "Open-source complement for automated CAN tooling",
+      "comparison_note": "python‑can/cantools complement the existing CANalyzer/CANoe and INCA workflow by providing low‑level bus access and DBC handling that can be called from Python scripts. They do not replace the full‑featured analysis, real‑time simulation, and integrated measurement dashboards of CANoe/INCA; those capabilities must be built or integrated separately.",
+      "limitations": "Capabilities depend on the CAN interface/backend and require you to assemble automation, visualization, simulation, and diagnostics as separate components.",
+      "practical_example": "1. Export a DBC file from your current CANoe project.\\n2. Install python‑can and cantools (pip install python-can cantools).\\n3. Write a short script that loads the DBC, creates a CAN message for the \"VehicleSpeed\" signal, encodes a value of 45 km/h, and sends it on a USB‑CAN interface.\\n4. Use python‑can’s Listener to capture the message and print the decoded signal, verifying round‑trip integrity.",
+      "key_concepts": [
+        "CAN bus back‑ends (socketcan, PCAN, Kvaser, etc.)",
+        "DBC parsing and signal encoding/decoding",
+        "Python scripting for automated message generation",
+        "Integration with hardware interfaces",
+        "Building custom test harnesses"
+      ],
+      "interview_questions": [
+        "How would you use python‑can and cantools to automate regression testing of a new VCU firmware release?",
+        "What limitations would you encounter when trying to replace CANoe's real‑time simulation features with an open‑source stack, and how could you mitigate them?"
+      ],
+      "next_step": "Clone the python‑can examples repository, run the \"basic_send_receive.py\" demo with a virtual CAN interface (e.g., vcan0 on Linux), and then modify it to load your project's DBC and transmit a real VCU signal.",
+      "category": "Vehicle Networks",
+      "source_title": "python-can + cantools official documentation",
+      "source_url": "https://python-can.readthedocs.io/",
+      "source": "python-can",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "2d4bb8b4940ca613",
+      "content_type": "industry",
+      "headline": "Emerging Automotive Cybersecurity Threats Impacting EV Control Units",
+      "summary": "The CloudSEK report enumerates ten cybersecurity threats that are reshaping the automotive sector in 2026. It highlights how increased connectivity, OTA updates, and complex supply chains expand the attack surface of vehicle ECUs, including VCU software. The analysis stresses the need for robust threat modeling, secure communication, and continuous validation throughout the development lifecycle.",
+      "why_it_matters": "VCU and EV powertrain software rely on CAN, CAN-FD, and Ethernet links that are directly targeted by many of the identified threats. Understanding these risks informs secure architecture decisions, hardening of diagnostic services, and compliance with emerging safety‑security standards such as ISO/SAE 21434. Early integration of threat mitigation reduces costly redesigns and improves readiness for security‑focused interviews.",
+      "key_concepts": [
+        "ISO/SAE 21434 lifecycle security processes",
+        "Secure OTA update mechanisms and code signing",
+        "Intrusion detection on CAN/FlexRay/Ethernet buses",
+        "Supply‑chain security for third‑party ECU firmware",
+        "Threat modeling techniques (e.g., STRIDE, attack trees) for VCU"
+      ],
+      "interview_questions": [
+        "How would you incorporate ISO/SAE 21434 security requirements into a Simulink‑based VCU development flow?",
+        "Describe a strategy for detecting and mitigating a malicious CAN message injection during real‑time vehicle operation."
+      ],
+      "next_step": "Create a threat model for a VCU that includes OTA update pathways and CAN bus interactions, then map required security controls to ISO/SAE 21434 objectives.",
+      "category": "Cybersecurity",
+      "source_title": "10 Automotive Cybersecurity Threats Reshaping the Industry in 2026 - CloudSEK",
+      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBPTHdfLVBQRzl4Ti1kS3dQelBKdFpSQk1DNWlmd2c2NjhVb2pBczVRUVVVeXBXUnFjb0E2TkpibmtYd0RGWEtPWktNMjlUSldXcExXWHBWYXFJVlJJaHhqT2xJR2VNTVhTb3lqdXdfaC1ZUFM5U1k2QjJVZG4?oc=5",
+      "source": "CloudSEK",
+      "published": "2026-10-06T16:00:30+00:00",
+      "relevance_score": 2,
+      "generation_mode": "ai"
+    }
+  ]
+}

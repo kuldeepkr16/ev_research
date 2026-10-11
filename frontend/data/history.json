@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-10T02:28:51.018101+00:00",
+  "updated_at": "2026-10-11T02:00:56.731948+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-11T07:30:56.636528+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Cybersecurity",
+        "Vehicle Networks"
+      ],
+      "sources": [
+        "CloudSEK",
+        "python-can"
+      ],
+      "path": "data/runs/ev_research_20261011_073056.json",
+      "filename": "ev_research_20261011_073056.json"
+    },
     {
       "generated_at": "2026-10-10T07:58:50.919359+05:30",
       "ai_provider": "groq",
