@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-12T08:01:16.598586+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-wireshark-automotive",
+      "content_type": "technology",
+      "tool_id": "wireshark-automotive",
+      "tool_name": "Wireshark for Automotive Ethernet",
+      "headline": "Wireshark for Automotive Ethernet – Open‑Source Packet Analyzer Complementing CANalyzer/CANoe",
+      "summary": "Wireshark is an open‑source network protocol analyzer that can decode Automotive Ethernet frames, IP, TCP/UDP, SOME/IP, and DoIP traffic. It reads and writes pcap files, allowing engineers to capture live traffic or replay recorded traces. While it excels at packet‑level inspection and troubleshooting, it does not provide the full simulation, test‑case management, or ECU‑wide calibration features of CANalyzer/CANoe. Wireshark therefore fits as a lightweight, complementary tool for detailed network debugging within a model‑based VCU development flow.",
+      "why_it_matters": "For a VCU developer, understanding Ethernet‑based diagnostics is becoming critical as EV powertrains migrate to high‑speed networks. Wireshark gives direct visibility into the raw traffic that underpins model‑based simulations, helping to validate communication behavior early in the development cycle.",
+      "current_stack": "CANalyzer/CANoe Ethernet and packet inspection",
+      "relationship": "Open-source complement for packet-level diagnostics",
+      "comparison_note": "Wireshark replaces the packet‑capture and raw‑frame inspection capabilities of CANalyzer/CANoe but does not replace their simulation, automated test, or calibration environments. It complements the existing stack by providing a free, extensible viewer for Ethernet traces, especially useful for ad‑hoc debugging of DoIP and SOME/IP messages.",
+      "limitations": "Packet analysis is only one part of a complete automotive network simulation and test environment.",
+      "practical_example": "1. Connect a laptop running Wireshark to the VCU Ethernet port via a managed switch. 2. Start a capture and trigger a DoIP diagnostic session from a test script. 3. In Wireshark, apply the filter `doip` to isolate DoIP packets, then add `someip` to view higher‑level service messages. 4. Export the filtered trace as a pcap file and import it into CANoe for further automated test analysis.",
+      "key_concepts": [
+        "pcap capture and export",
+        "Automotive Ethernet frame structure",
+        "TCP/UDP transport for diagnostic protocols",
+        "DoIP (Diagnostics over IP)",
+        "SOME/IP service discovery and messaging"
+      ],
+      "interview_questions": [
+        "How would you use Wireshark to isolate and troubleshoot a failing DoIP handshake between a VCU and a diagnostic tester?",
+        "Explain the limitations of using Wireshark alone for end‑to‑end validation of an Automotive Ethernet communication stack."
+      ],
+      "next_step": "Download and install the latest Wireshark release, capture a short Ethernet trace from your VCU, and practice filtering for `doip` and `someip` to become familiar with the protocol decoders.",
+      "category": "Vehicle Networks",
+      "source_title": "Wireshark for Automotive Ethernet official documentation",
+      "source_url": "https://www.wireshark.org/docs/",
+      "source": "Wireshark",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "76581ea5ba536541",
+      "content_type": "industry",
+      "headline": "VCU Market Set to Accelerate Through 2035 as Electrification and Software‑Defined Vehicles Expand",
+      "summary": "The IndexBox forecast indicates sustained growth in the vehicle control unit (VCU) market through 2035, driven primarily by the rise of electric powertrains and the shift toward software‑defined vehicle architectures. It highlights a transition from hardware‑centric designs to modular, updatable software stacks that integrate tightly with battery management, motor control, and connectivity functions.",
+      "why_it_matters": "For model‑based developers, the expanding VCU market underscores the need to adopt open, software‑centric toolchains that support rapid algorithm iteration and over‑the‑air updates. Understanding these trends helps align Simulink models with emerging VCU architectures and prepares engineers for roles that emphasize software integration and cybersecurity in EVs.",
+      "key_concepts": [
+        "Software‑Defined Vehicle (SDV) architectures",
+        "Modular VCU hardware platforms with OTA update capability",
+        "Integration of BMS, motor control, and vehicle dynamics in a unified software stack",
+        "Model‑based design for safety‑critical control (ISO 26262) and functional safety verification",
+        "Open standards for in‑vehicle networking (e.g., CAN FD, Ethernet, SOME/IP)"
+      ],
+      "interview_questions": [
+        "How would you restructure an existing Simulink‑based VCU model to support OTA‑updatable software modules in a software‑defined vehicle architecture?",
+        "What validation and verification techniques would you apply to ensure functional safety compliance (ISO 26262) when integrating battery‑management and motor‑control algorithms into a unified VCU?"
+      ],
+      "next_step": "Create a prototype VCU software layer in Simulink that abstracts BMS, motor control, and vehicle dynamics as separate, version‑controlled modules, and generate code for a CAN‑FD/Ethernet gateway to explore OTA update workflows.",
+      "category": "EV Powertrain",
+      "source_title": "Vehicle Control Unit Vcu Market Forecast to 2035: Electrification and Software-Defined Vehicles Drive Growth - IndexBox",
+      "source_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOLWhCeTBTaW5vdWRPdDNFNDVvd0xjbElPWHhwbkJQNHRwN3ZybERaVld0cUh5VS1hN3hKUjVCaFhQMWhDZ3B4TzZaOFdlY2pLa0I2OUpXRTlLa0lLT2xtWk11Q2hDSG9IdXZzbDhOZ1JNMWdDQ2Fnenh5ZnNZX1JZeGZMR0tLTzNBUDZqMmF0aTV4M3NDNUhybVdEQVpmVzVnMGxTTWtDUURFSEVfV2RNY2FVeDdxWU5SNWg3ZWVBU1g5Tk43aG9GX1huUkUweWxRY3dZ?oc=5",
+      "source": "IndexBox",
+      "published": "2026-10-11T17:11:04+00:00",
+      "relevance_score": 2,
+      "generation_mode": "ai"
+    }
+  ]
+}

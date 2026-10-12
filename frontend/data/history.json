@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-11T02:00:56.731948+00:00",
+  "updated_at": "2026-10-12T02:31:16.717172+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-12T08:01:16.598586+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "EV Powertrain",
+        "Vehicle Networks"
+      ],
+      "sources": [
+        "IndexBox",
+        "Wireshark"
+      ],
+      "path": "data/runs/ev_research_20261012_080116.json",
+      "filename": "ev_research_20261012_080116.json"
+    },
     {
       "generated_at": "2026-10-11T07:30:56.636528+05:30",
       "ai_provider": "groq",
