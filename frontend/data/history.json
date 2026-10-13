@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-12T02:31:16.717172+00:00",
+  "updated_at": "2026-10-13T03:40:52.173643+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-13T09:10:52.063675+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Cybersecurity",
+        "Service-Oriented Communication"
+      ],
+      "sources": [
+        "COVESA",
+        "IndexBox"
+      ],
+      "path": "data/runs/ev_research_20261013_091052.json",
+      "filename": "ev_research_20261013_091052.json"
+    },
     {
       "generated_at": "2026-10-12T08:01:16.598586+05:30",
       "ai_provider": "groq",
