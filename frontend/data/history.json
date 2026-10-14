@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-13T03:40:52.173643+00:00",
+  "updated_at": "2026-10-14T02:00:42.079849+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-14T07:30:41.943155+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "EV Powertrain",
+        "Vehicle Data"
+      ],
+      "sources": [
+        "COVESA",
+        "IndexBox"
+      ],
+      "path": "data/runs/ev_research_20261014_073041.json",
+      "filename": "ev_research_20261014_073041.json"
+    },
     {
       "generated_at": "2026-10-13T09:10:52.063675+05:30",
       "ai_provider": "groq",

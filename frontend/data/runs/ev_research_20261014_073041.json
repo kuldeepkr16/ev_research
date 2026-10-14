@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-14T07:30:41.943155+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-covesa-vss",
+      "content_type": "technology",
+      "tool_id": "covesa-vss",
+      "tool_name": "COVESA Vehicle Signal Specification",
+      "headline": "COVESA Vehicle Signal Specification (VSS) vs. Proprietary Signal Naming in EV VCU Development",
+      "summary": "The Vehicle Signal Specification (VSS) is an open, hierarchical naming model for vehicle signals that standardizes how data is described across ECUs, services, and tools. It sits on top of existing transport layers such as CAN, SOME/IP, and calibration interfaces, providing a common abstraction without replacing them. By adopting VSS, developers can decouple model-based Simulink blocks and calibration scripts from project‑specific signal names, enabling reusable models and smoother integration with open‑source data pipelines.",
+      "why_it_matters": "For a model‑based VCU developer, VSS offers a vendor‑agnostic way to reference signals, reducing the effort needed to retarget models to new vehicle platforms. It also aligns with emerging SDV APIs and cloud‑based data services, preparing engineers for future EV software architectures.",
+      "current_stack": "Project-specific signal naming and proprietary vehicle data models",
+      "relationship": "Open standard/complement for normalized vehicle data",
+      "comparison_note": "VSS complements the current stack: it does not transport signals, so CAN, CANalyzer/CANoe, and INCA remain required for bus communication and calibration. It replaces project‑specific naming conventions and manual signal mapping, but it does not replace the underlying communication protocols or calibration tooling.",
+      "limitations": "VSS is a data model; it does not itself transport signals or replace CAN, SOME/IP, a VCU application layer, or calibration tooling.",
+      "practical_example": "1. Export a Simulink model's signal list to a CSV. 2. Use the open‑source VSS Python library to map each CSV entry to a VSS path (e.g., \"Vehicle.Powertrain.Battery.StateOfCharge\"). 3. Generate a VSS‑based signal dictionary JSON. 4. In CANoe, import the JSON as a virtual signal source to verify that the same VSS paths appear in the bus simulation, confirming the abstraction works end‑to‑end.",
+      "key_concepts": [
+        "Hierarchical signal namespace",
+        "Data model vs. transport layer",
+        "Mapping proprietary signals to VSS paths",
+        "Integration with SDV APIs",
+        "Tool‑agnostic signal dictionary generation"
+      ],
+      "interview_questions": [
+        "How would you migrate an existing Simulink‑based VCU model that uses project‑specific signal names to use the COVESA Vehicle Signal Specification, and what challenges might arise?",
+        "Explain the difference between a data model like VSS and a communication protocol such as CAN. How does VSS interact with calibration tools like INCA?"
+      ],
+      "next_step": "Clone the official VSS repository, install the Python vss-tools package, and practice converting a small set of your vehicle's CAN signal definitions into VSS paths using the provided CLI utilities.",
+      "category": "Vehicle Data",
+      "source_title": "COVESA Vehicle Signal Specification official documentation",
+      "source_url": "https://covesa.github.io/vehicle_signal_specification/",
+      "source": "COVESA",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "76581ea5ba536541",
+      "content_type": "industry",
+      "headline": "VCU Market Set to Accelerate to 2035 on Electrification and Software‑Defined Vehicle Trends",
+      "summary": "IndexBox forecasts strong growth in the vehicle control unit (VCU) market through 2035, driven primarily by the shift to electric powertrains and the emergence of software‑defined vehicles. The report highlights expanding demand for flexible, high‑performance ECUs that can host OTA updates, advanced driver‑assist functions, and integrated powertrain control. Market expansion is linked to increasing adoption of model‑based development and open‑source software stacks in automotive OEMs.",
+      "why_it_matters": "For a model‑based developer, the forecast underscores the need to master VCU architectures that support both electric powertrain control and over‑the‑air software delivery. It also signals a growing relevance of open‑source and standards‑based toolchains (e.g., AUTOSAR Adaptive, ROS‑2) as OEMs seek scalable, software‑centric solutions.",
+      "key_concepts": [
+        "Software‑Defined Vehicle (SDV) architecture",
+        "Over‑the‑Air (OTA) update frameworks",
+        "AUTOSAR Adaptive Platform and Open‑Source AUTOSAR",
+        "Model‑Based Design integration with ECUs",
+        "Functional safety (ISO 26262) for electric powertrains"
+      ],
+      "interview_questions": [
+        "How would you design a VCU software stack to enable secure OTA updates while meeting ISO 26262 safety requirements?",
+        "Explain how you would integrate a MATLAB/Simulink model of an EV powertrain into an AUTOSAR Adaptive VCU using open‑source toolchains."
+      ],
+      "next_step": "Create a prototype VCU software module in Simulink, generate AUTOSAR Adaptive code, and deploy it on a Linux‑based ECU emulator to practice OTA update handling and safety analysis.",
+      "category": "EV Powertrain",
+      "source_title": "Vehicle Control Unit Vcu Market Forecast to 2035: Electrification and Software-Defined Vehicles Drive Growth - IndexBox",
+      "source_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOLWhCeTBTaW5vdWRPdDNFNDVvd0xjbElPWHhwbkJQNHRwN3ZybERaVld0cUh5VS1hN3hKUjVCaFhQMWhDZ3B4TzZaOFdlY2pLa0I2OUpXRTlLa0lLT2xtWk11Q2hDSG9IdXZzbDhOZ1JNMWdDQ2Fnenh5ZnNZX1JZeGZMR0tLTzNBUDZqMmF0aTV4M3NDNUhybVdEQVpmVzVnMGxTTWtDUURFSEVfV2RNY2FVeDdxWU5SNWg3ZWVBU1g5Tk43aG9GX1huUkUweWxRY3dZ?oc=5",
+      "source": "IndexBox",
+      "published": "2026-10-11T17:11:04+00:00",
+      "relevance_score": 2,
+      "generation_mode": "ai"
+    }
+  ]
+}
