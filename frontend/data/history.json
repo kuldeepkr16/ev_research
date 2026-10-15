@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-14T02:00:42.079849+00:00",
+  "updated_at": "2026-10-15T01:36:05.070810+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-15T07:06:05.000329+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "EV Powertrain",
+        "Middleware"
+      ],
+      "sources": [
+        "Eclipse iceoryx",
+        "IndexBox"
+      ],
+      "path": "data/runs/ev_research_20261015_070605.json",
+      "filename": "ev_research_20261015_070605.json"
+    },
     {
       "generated_at": "2026-10-14T07:30:41.943155+05:30",
       "ai_provider": "groq",

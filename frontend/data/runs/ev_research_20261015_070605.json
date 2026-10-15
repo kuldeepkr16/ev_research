@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-15T07:06:05.000329+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-iceoryx",
+      "content_type": "technology",
+      "tool_id": "iceoryx",
+      "tool_name": "Eclipse iceoryx",
+      "headline": "Eclipse iceoryx vs. Proprietary ECU Middleware: Zero‑Copy IPC for High‑Rate VCU Communication",
+      "summary": "Eclipse iceoryx is an open‑source middleware that enables shared‑memory, zero‑copy inter‑process communication (IPC) using a publish/subscribe model. It is designed for high‑bandwidth, software‑defined vehicle platforms where low latency and deterministic data exchange are critical. While it excels at fast local data transport, it does not provide a full AUTOSAR stack, diagnostics, networking, or safety‑critical services.",
+      "why_it_matters": "For a model‑based VCU developer, iceoryx can dramatically reduce data copy overhead between Simulink‑generated components or custom C++ modules, improving real‑time performance. It also offers a portable, standards‑based alternative that can be integrated alongside existing CAN and INCA tooling.",
+      "current_stack": "Proprietary ECU/vehicle middleware for high-rate local communication",
+      "relationship": "Open-source complement for zero-copy inter-process communication",
+      "comparison_note": "iceoryx complements the current proprietary middleware by handling intra‑ECU, high‑rate data streams (e.g., sensor fusion, torque command) with zero‑copy IPC. It does not replace the full vehicle‑wide communication stack (CAN, CANoe, INCA) or AUTOSAR services such as diagnostics, network management, or safety‑critical execution contexts.",
+      "limitations": "It solves a specific IPC problem and does not replace an entire AUTOSAR, diagnostics, networking, safety, or application framework.",
+      "practical_example": "Create two simple Simulink S‑Functions that publish and subscribe to a shared memory topic using iceoryx C++ APIs. Run them as separate processes on a development PC, transmit a 1 kHz torque vector, and measure latency reduction compared to a socket‑based exchange.",
+      "key_concepts": [
+        "Zero‑copy inter‑process communication",
+        "Shared‑memory publish/subscribe model",
+        "Iceoryx RouDi (runtime daemon) and Service Discovery",
+        "Memory layout and alignment for deterministic latency",
+        "Integration with model‑based code generation"
+      ],
+      "interview_questions": [
+        "How does zero‑copy IPC in iceoryx improve deterministic behavior compared to traditional socket or CAN‑based messaging?",
+        "What safety considerations must be addressed when introducing a shared‑memory middleware like iceoryx into an AUTOSAR‑based VCU architecture?"
+      ],
+      "next_step": "Clone the iceoryx repository, build the runtime daemon (RouDi), and follow the official \"Hello World\" tutorial to publish a simple integer from a C++ program and subscribe to it from a second program.",
+      "category": "Middleware",
+      "source_title": "Eclipse iceoryx official documentation",
+      "source_url": "https://eclipse-iceoryx.github.io/iceoryx/",
+      "source": "Eclipse iceoryx",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "76581ea5ba536541",
+      "content_type": "industry",
+      "headline": "VCU Market Set to Surge Through 2035 as Electrification and Software‑Defined Vehicles Accelerate",
+      "summary": "IndexBox forecasts strong growth in the vehicle control unit (VCU) market up to 2035, driven primarily by the shift to electric powertrains and the emergence of software‑defined vehicles (SDVs). The report highlights expanding VCU functionality, higher integration of high‑speed networks, and increased demand for over‑the‑air (OTA) update capability. Market expansion is linked to stricter functional‑safety and cybersecurity standards as well as the need for scalable, model‑based development pipelines.",
+      "why_it_matters": "For a model‑based developer, the forecast signals a move toward more software‑intensive VCU architectures that must support EV‑specific control loops, OTA updates, and multi‑domain integration. Understanding these trends helps align Simulink‑based workflows with emerging standards and prepares engineers for roles that require both control expertise and software engineering skills.",
+      "key_concepts": [
+        "Software‑Defined Vehicle (SDV) architectures",
+        "ISO 26262 functional safety and ISO/SAE 21434 cybersecurity for VCUs",
+        "AUTOSAR Adaptive platform for high‑performance EV control",
+        "High‑speed in‑vehicle networks (CAN FD, Ethernet, FlexRay)",
+        "Model‑based development with OTA update pipelines"
+      ],
+      "interview_questions": [
+        "Describe how you would architect a VCU to support both legacy CAN and emerging Ethernet for EV powertrain control while meeting ISO 26262 safety goals.",
+        "How can Simulink model‑based design be integrated with AUTOSAR Adaptive to enable OTA updates and cybersecurity compliance in a software‑defined VCU?"
+      ],
+      "next_step": "Study the AUTOSAR Adaptive platform and its Simulink code‑generation workflow for EV powertrain control, focusing on safety‑critical module integration and OTA update mechanisms.",
+      "category": "EV Powertrain",
+      "source_title": "Vehicle Control Unit Vcu Market Forecast to 2035: Electrification and Software-Defined Vehicles Drive Growth - IndexBox",
+      "source_url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOLWhCeTBTaW5vdWRPdDNFNDVvd0xjbElPWHhwbkJQNHRwN3ZybERaVld0cUh5VS1hN3hKUjVCaFhQMWhDZ3B4TzZaOFdlY2pLa0I2OUpXRTlLa0lLT2xtWk11Q2hDSG9IdXZzbDhOZ1JNMWdDQ2Fnenh5ZnNZX1JZeGZMR0tLTzNBUDZqMmF0aTV4M3NDNUhybVdEQVpmVzVnMGxTTWtDUURFSEVfV2RNY2FVeDdxWU5SNWg3ZWVBU1g5Tk43aG9GX1huUkUweWxRY3dZ?oc=5",
+      "source": "IndexBox",
+      "published": "2026-10-11T17:11:04+00:00",
+      "relevance_score": 2,
+      "generation_mode": "ai"
+    }
+  ]
+}
