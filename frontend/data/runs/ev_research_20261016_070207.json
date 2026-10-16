@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-16T07:02:07.501709+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-zenoh",
+      "content_type": "technology",
+      "tool_id": "zenoh",
+      "tool_name": "Eclipse Zenoh",
+      "headline": "Zenoh vs. Proprietary Middleware: Open‑Source Pub/Sub for Vehicle Control Units",
+      "summary": "Zenoh is an open‑source middleware that unifies publish/subscribe, query, and storage‑oriented data patterns across distributed systems. It targets edge‑to‑cloud and software‑defined vehicle architectures, offering configurable QoS and data routing. In a VCU context it can serve as a transport layer for sensor, control, and diagnostic data, complementing existing CAN‑based stacks.",
+      "why_it_matters": "For a model‑based developer, Zenoh introduces a flexible data‑centric paradigm that aligns with emerging Ethernet‑backbone designs and cloud‑connected services. Understanding its capabilities helps you evaluate future‑proof architectures and prepare for roles that require knowledge of open‑source vehicle networking.",
+      "current_stack": "Proprietary distributed data/service middleware",
+      "relationship": "Open-source data communication technology to evaluate",
+      "comparison_note": "Zenoh can replace the proprietary distributed data/service middleware used for inter‑ECU communication, but it does not replace CANalyzer/CANoe (analysis) or INCA (measurement/calibration). It complements the CAN physical layer by providing higher‑level data distribution over Ethernet or other transports. Safety‑critical qualification, timing guarantees, and security must be assessed per project; Zenoh alone does not satisfy automotive functional‑safety standards without additional engineering.",
+      "limitations": "Suitability for a safety-critical ECU depends on architecture, timing, qualification, security, and product-specific constraints.",
+      "practical_example": "1. Clone the Zenoh repository (https://github.com/eclipse-zenoh/zenoh). 2. In a Python virtual environment, install the Zenoh Python bindings (`pip install zenoh`). 3. Write a publisher that sends a JSON payload `{ \"speed_kph\": 85 }` every 100 ms on the topic `vcu/speed`. 4. Write a subscriber that receives the topic, logs the value, and queries the last 10 messages using Zenoh's query API. Run both scripts on the same workstation to observe real‑time pub/sub and query behavior.",
+      "key_concepts": [
+        "Publish/Subscribe messaging",
+        "Queryable data storage",
+        "Quality of Service (QoS) profiles",
+        "Edge‑to‑cloud data routing",
+        "Integration with Ethernet‑based vehicle networks"
+      ],
+      "interview_questions": [
+        "How would you evaluate Zenoh's timing and determinism for a safety‑critical VCU compared to a traditional CAN‑based middleware?",
+        "Describe how Zenoh's QoS mechanisms (e.g., reliability, congestion control) differ from CAN bus priority arbitration and what implications this has for real‑time control loops."
+      ],
+      "next_step": "Complete the official Zenoh tutorial (https://zenoh.io/docs/getting-started/) to build a simple publisher/subscriber pair, then experiment with QoS settings and query APIs on a local Ethernet network.",
+      "category": "Middleware",
+      "source_title": "Eclipse Zenoh official documentation",
+      "source_url": "https://zenoh.io/",
+      "source": "Eclipse Zenoh",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "7c80c97cb53e44a6",
+      "content_type": "industry",
+      "headline": "Regulatory mandates spur rapid growth in V2X cybersecurity market through 2035",
+      "summary": "IndexBox projects a strong expansion of the Vehicle‑to‑Everything (V2X) cybersecurity market up to 2035, driven primarily by tightening global regulations. The forecast highlights increasing investment in secure V2X communication stacks and related services. Growth is linked to mandatory compliance with emerging safety and security standards for connected vehicles.",
+      "why_it_matters": "VCU software for EV powertrains must now incorporate V2X security functions to meet future regulatory requirements, affecting architecture, OTA update mechanisms, and diagnostic interfaces. Understanding the market trajectory helps developers prioritize secure communication protocols and certification‑ready designs that will be scrutinized in upcoming interviews and projects.",
+      "key_concepts": [
+        "ISO/SAE 21434 and UNECE R155/R156 security standards",
+        "Public Key Infrastructure (PKI) for V2X message authentication",
+        "Secure OTA update frameworks for V2X firmware",
+        "Threat modeling and intrusion detection specific to V2X links",
+        "C‑V2X vs. DSRC protocol security profiles"
+      ],
+      "interview_questions": [
+        "How would you integrate a PKI‑based authentication scheme for V2X messages into an existing VCU software architecture?",
+        "Describe a validation strategy for ensuring that OTA updates to V2X modules comply with ISO/SAE 21434 security requirements."
+      ],
+      "next_step": "Study the ISO/SAE 21434 standard and create a threat model for a V2X communication module within a VCU, including mitigation strategies for identified attack vectors.",
+      "category": "Cybersecurity",
+      "source_title": "Vehicle to Everything V2x Cybersecurity Market Forecast to 2035: Regulatory Mandates Drive Expansion - IndexBox",
+      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcFJOUnN0YmJhaEQyZl9mYU9PNkNXcEc4SHhkbVFnSHNBOTdjZHVxZFdPT0xKaFhWM1FITUxFb1gyNEw2ajNfc19IQkdkQWhqMmNoT1h5NXZ0Sm00c0pNQ1BRLXZWVUpiTHA5NWdLZTctMjRSaTdUSkZEeV9IckxTb2xOb1pNdnhjZ2gxSUpBcENCeGJtc3FEZmRYTG1CMjA1VDdwNzh2bEtKRE56VGpuVG1iOEc4Vm1WQ3lfWUlFaWpXdmpDU21jeg?oc=5",
+      "source": "IndexBox",
+      "published": "2026-10-15T16:31:04+00:00",
+      "relevance_score": 2,
+      "generation_mode": "ai"
+    }
+  ]
+}

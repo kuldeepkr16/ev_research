@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-15T01:36:05.070810+00:00",
+  "updated_at": "2026-10-16T01:32:07.598693+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-16T07:02:07.501709+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Cybersecurity",
+        "Middleware"
+      ],
+      "sources": [
+        "Eclipse Zenoh",
+        "IndexBox"
+      ],
+      "path": "data/runs/ev_research_20261016_070207.json",
+      "filename": "ev_research_20261016_070207.json"
+    },
     {
       "generated_at": "2026-10-15T07:06:05.000329+05:30",
       "ai_provider": "groq",
