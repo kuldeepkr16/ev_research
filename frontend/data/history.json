@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-16T01:32:07.598693+00:00",
+  "updated_at": "2026-10-17T01:22:59.443822+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-17T06:52:59.357702+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Safety & Process",
+        "Vehicle Data"
+      ],
+      "sources": [
+        "Eclipse KUKSA",
+        "autoelectronics.co.kr"
+      ],
+      "path": "data/runs/ev_research_20261017_065259.json",
+      "filename": "ev_research_20261017_065259.json"
+    },
     {
       "generated_at": "2026-10-16T07:02:07.501709+05:30",
       "ai_provider": "groq",
