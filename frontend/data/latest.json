@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T06:52:59.357702+05:30",
+  "generated_at": "2026-10-18T06:46:18.269095+05:30",
   "ai_provider": "groq",
   "article_count": 2,
   "stream_counts": {
@@ -8,62 +8,62 @@
   },
   "articles": [
     {
-      "id": "tech-kuksa",
+      "id": "tech-eclipse-score",
       "content_type": "technology",
-      "tool_id": "kuksa",
-      "tool_name": "Eclipse KUKSA",
-      "headline": "Eclipse KUKSA Data Broker vs Proprietary Vehicle Data Stacks: Open‑Source Complement for SDV Data Access",
-      "summary": "KUKSA Data Broker is an open‑source middleware that exposes vehicle signals through standardized interfaces such as the Vehicle Signal Specification (VSS) and gRPC. It is intended for software‑defined vehicle (SDV) scenarios where applications need runtime access to telemetry, diagnostics, and configuration data. The broker sits above the low‑level CAN drivers and calibration tools, providing a unified API for higher‑level services and test scripts. It does not implement the real‑time control loops or safety‑critical functions that reside in the VCU firmware.",
-      "why_it_matters": "For a model‑based developer, KUKSA offers a language‑agnostic way to read and write vehicle data without writing custom CAN wrappers, accelerating rapid prototyping of control‑logic validation and HIL tests. It also aligns with emerging industry moves toward standardized data models, which can be a differentiator in future EV projects and interviews.",
-      "current_stack": "Proprietary vehicle data brokers and application APIs",
-      "relationship": "Open-source complement for SDV vehicle-data access",
-      "comparison_note": "KUKSA complements the existing MATLAB/Simulink, CANalyzer/CANoe, and INCA stack by replacing proprietary vehicle‑data brokers and custom APIs used for telemetry access. It does NOT replace low‑level CAN driver stacks, the VCU's real‑time control loops, functional‑safety mechanisms, or the calibration workflow provided by INCA. Instead, it can be layered on top of those tools to provide a unified gRPC/VSS interface for higher‑level applications.",
-      "limitations": "It does not replace low-level VCU control loops, CAN drivers, functional-safety mechanisms, or calibration infrastructure.",
-      "practical_example": "1. Clone the KUKSA‑databroker repository and start the broker locally (docker run eclipse/kuksa.val:latest). 2. Use the provided VSS JSON file to define a few signals (e.g., Vehicle.Speed, Engine.RPM). 3. From a Python script, install the kuksa-client library, connect via gRPC, and publish a simulated speed value. 4. In CANoe, add a simple CAN frame that mirrors the same signal and verify that the broker reflects the updated value, demonstrating bidirectional data flow between legacy CAN and the KUKSA API.",
+      "tool_id": "eclipse-score",
+      "tool_name": "Eclipse S-CORE",
+      "headline": "Eclipse S‑CORE vs. MATLAB/Simulink + CANalyzer/INCA: Open‑Source Middleware for SDV Platforms",
+      "summary": "Eclipse S‑CORE is an open‑source automotive initiative that provides reusable software building blocks for software‑defined vehicle (SDV) platforms. It targets middleware and platform architecture rather than model‑based design or low‑level calibration. The project lives under the Eclipse Foundation and is intended to complement, not replace, existing proprietary stacks such as MATLAB/Simulink, CANalyzer/CANoe, and INCA.",
+      "why_it_matters": "For a Vehicle Control Unit (VCU) developer, S‑CORE offers a community‑driven way to assemble portable, standards‑based services (e.g., communication, diagnostics, lifecycle management) that can be integrated into a model‑based workflow. Understanding S‑CORE helps you evaluate open‑source alternatives for future platform‑centric projects and broaden your skill set for emerging SDV roles.",
+      "current_stack": "Proprietary automotive platform/middleware components",
+      "relationship": "Open-source automotive software foundation to track",
+      "comparison_note": "S‑CORE does not provide a graphical modeling environment like MATLAB/Simulink, nor does it replace CAN analysis tools (CANalyzer/CANoe) or calibration suites (INCA). It can complement the current stack by supplying reusable middleware components that can be called from generated Simulink code or used to host calibration interfaces, but each component must be assessed for maturity and production suitability.",
+      "limitations": "It is not a single replacement product for MATLAB/Simulink or AUTOSAR, and its components must be evaluated against project maturity and production requirements.",
+      "practical_example": "Clone the S‑CORE repository, build the \"s-core-communication\" bundle, and generate a simple CAN‑FD driver stub. Then, in Simulink, use an S‑Function block to call the driver’s API, run the model on a target board, and capture the CAN traffic with CANalyzer to verify end‑to‑end communication.",
       "key_concepts": [
-        "Vehicle Signal Specification (VSS)",
-        "gRPC service interface",
-        "Data broker architecture",
-        "Software‑Defined Vehicle (SDV) data access patterns",
-        "Integration with existing CAN stacks"
+        "Software‑Defined Vehicle (SDV) platform architecture",
+        "Open‑source middleware building blocks",
+        "Eclipse Foundation governance model",
+        "Integration of generated code with reusable services",
+        "Maturity assessment for production use"
       ],
       "interview_questions": [
-        "How does the KUKSA Data Broker enable decoupling of application code from low‑level CAN messaging, and what implications does this have for functional safety certification?",
-        "Describe a workflow where you would use KUKSA alongside INCA for calibration data collection. Which parts of the process remain INCA‑centric, and which can be migrated to KUKSA?"
+        "How would you evaluate an Eclipse S‑CORE component for inclusion in a safety‑critical VCU, and what additional verification steps would you add compared to a proprietary middleware?",
+        "Describe a workflow where you combine Simulink model code generation with an S‑CORE communication service to implement a new CAN message, and how you would validate it using CANalyzer."
       ],
-      "next_step": "Set up a local KUKSA Data Broker instance (Docker) and implement a simple gRPC client in Python to read/write a VSS‑defined signal, then map that signal to a CAN message in CANoe to observe the end‑to‑end data path.",
-      "category": "Vehicle Data",
-      "source_title": "Eclipse KUKSA official documentation",
-      "source_url": "https://eclipse-kuksa.github.io/kuksa-databroker/",
-      "source": "Eclipse KUKSA",
+      "next_step": "Follow the official S‑CORE getting‑started guide, build the core communication bundle, and run the provided example that integrates a generated Simulink function with the S‑CORE API.",
+      "category": "Automotive Platform",
+      "source_title": "Eclipse S-CORE official documentation",
+      "source_url": "https://projects.eclipse.org/projects/automotive.score",
+      "source": "Eclipse Foundation",
       "published": "",
       "relevance_score": 10,
       "generation_mode": "ai"
     },
     {
-      "id": "298bb67d1b8651d5",
+      "id": "7c80c97cb53e44a6",
       "content_type": "industry",
-      "headline": "BMW, Mercedes‑Benz & Microsoft showcase automotive software verification methods",
-      "summary": "A joint event in Munich will feature BMW, Mercedes‑Benz and Microsoft presenting their approaches to proving automotive software. The focus is on safety‑critical verification and validation processes used in modern vehicle development. The session highlights how industry leaders integrate software assurance practices with existing development stacks.",
-      "why_it_matters": "VCU and EV power‑train developers must meet ISO 26262 safety goals, and the presented methods illustrate practical ways to embed verification into model‑based workflows. Understanding these approaches helps align MATLAB/Simulink designs with proven industry safety pipelines, reducing risk before hardware integration.",
+      "headline": "Regulatory mandates spur rapid growth in V2X cybersecurity market through 2035",
+      "summary": "IndexBox projects a strong expansion of the Vehicle‑to‑Everything (V2X) cybersecurity market up to 2035, driven primarily by tightening safety and security regulations worldwide. The forecast highlights increasing demand for secure V2X communication stacks, key‑management solutions, and compliance testing services. Market growth is linked to broader adoption of V2X functions such as V2V, V2I, and V2P across new EV platforms.",
+      "why_it_matters": "VCU developers must embed robust V2X security mechanisms to meet emerging regulatory requirements (e.g., ISO/SAE 21434, UN R155). Failure to do so can block vehicle homologation and expose the powertrain control network to cyber‑threats that could compromise safety and performance. Understanding the market trajectory helps prioritize security‑by‑design practices and tool adoption for future EV projects.",
       "key_concepts": [
-        "Functional safety verification (ISO 26262 compliance)",
-        "Model‑in‑the‑Loop / Software‑in‑the‑Loop testing pipelines",
-        "Continuous integration for automotive software",
-        "Toolchain interoperability between OEMs and cloud platforms",
-        "Traceability of requirements to test results"
+        "V2X communication protocols (DSRC, C‑ITS, C‑V2X)",
+        "Automotive cybersecurity standards (ISO/SAE 21434, UN R155/156)",
+        "Secure key‑management and certificate‑based authentication",
+        "Over‑the‑air (OTA) secure update frameworks",
+        "Threat modeling and penetration testing for V2X stacks"
       ],
       "interview_questions": [
-        "How would you integrate a Model‑in‑the‑Loop test suite into a CI pipeline while maintaining ISO 26262 traceability?",
-        "Describe a strategy for validating a VCU control algorithm using both simulation (e.g., Simulink) and hardware‑in‑the‑loop testing."
+        "How would you design a secure V2X communication interface within a VCU while ensuring compliance with ISO/SAE 21434?",
+        "Describe the steps you would take to integrate OTA security for V2X firmware updates in an EV powertrain controller."
       ],
-      "next_step": "Build a simple CI pipeline that runs a Simulink‑generated VCU model through MIL and SIL tests, and generate a traceability report linking test cases to safety requirements.",
-      "category": "Safety & Process",
-      "source_title": "BMW, Mercedes-Benz and Microsoft to Share How They Prove Automotive Software in Munich - autoelectronics.co.kr",
-      "source_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9IUTM3WDd4aHBta3R1ODl5ZnE5RGhIaTBMY0RWV0lyWm45TTg1OG5OZVZLRWhqYkUwOXNKM1dKdFdycUJUY2lGX3JCVkpJQUZJQmhTVDh4OE1kV2ZqdUcxbVVqOE5rbnowTzRSWWJscW1qVDh0?oc=5",
-      "source": "autoelectronics.co.kr",
-      "published": "2026-10-15T23:56:14+00:00",
-      "relevance_score": 1,
+      "next_step": "Study the ISO/SAE 21434 lifecycle process and implement a simple threat model for a V2X message flow using MATLAB/Simulink and a security library such as OpenSSL.",
+      "category": "Cybersecurity",
+      "source_title": "Vehicle to Everything V2x Cybersecurity Market Forecast to 2035: Regulatory Mandates Drive Expansion - IndexBox",
+      "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcFJOUnN0YmJhaEQyZl9mYU9PNkNXcEc4SHhkbVFnSHNBOTdjZHVxZFdPT0xKaFhWM1FITUxFb1gyNEw2ajNfc19IQkdkQWhqMmNoT1h5NXZ0Sm00c0pNQ1BRLXZWVUpiTHA5NWdLZTctMjRSaTdUSkZEeV9IckxTb2xOb1pNdnhjZ2gxSUpBcENCeGJtc3FEZmRYTG1CMjA1VDdwNzh2bEtKRE56VGpuVG1iOEc4Vm1WQ3lfWUlFaWpXdmpDU21jeg?oc=5",
+      "source": "IndexBox",
+      "published": "2026-10-15T16:31:04+00:00",
+      "relevance_score": 2,
       "generation_mode": "ai"
     }
   ]
