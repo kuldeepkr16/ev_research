@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-20T07:27:04.573260+05:30",
+  "ai_provider": "groq",
+  "article_count": 2,
+  "stream_counts": {
+    "technology": 1,
+    "industry": 1
+  },
+  "articles": [
+    {
+      "id": "tech-threadx",
+      "content_type": "technology",
+      "tool_id": "threadx",
+      "tool_name": "Eclipse ThreadX",
+      "headline": "Eclipse ThreadX vs. Commercial RTOSes for Vehicle Control Units",
+      "summary": "Eclipse ThreadX is an open‑source, royalty‑free RTOS family designed for deeply embedded systems. It offers core RTOS primitives—tasks, queues, timers, and memory management—while remaining lightweight enough for automotive ECUs. In a VCU workflow it sits beneath the model‑based control code, providing the execution platform that commercial RTOSes (e.g., AUTOSAR OS, Green Hills INTEGRITY) currently supply.",
+      "why_it_matters": "For a model‑based developer, understanding ThreadX clarifies how deterministic scheduling and low‑latency inter‑task communication are achieved without a proprietary license. It also highlights the separation between runtime services and higher‑level modeling, diagnostics, or AUTOSAR integration that you already use.",
+      "current_stack": "Commercial RTOS choices for embedded ECUs",
+      "relationship": "Open-source embedded RTOS option to understand",
+      "comparison_note": "ThreadX replaces the commercial RTOS layer (task scheduler, synchronization, memory pools) but does not replace MATLAB/Simulink modeling, AUTOSAR services, CAN analysis tools (CANalyzer/CANoe), or calibration environments (INCA). It complements the existing stack by offering an alternative runtime that can be paired with the same model‑generated code, yet you must still integrate diagnostics, safety mechanisms, and middleware separately.",
+      "limitations": "RTOS selection is only one layer of an automotive ECU and does not replace control modeling, AUTOSAR services, diagnostics, or safety engineering.",
+      "practical_example": "Create a simple ThreadX project on an STM32 Nucleo board: define two threads—one toggles an LED every 100 ms, the other reads a CAN message and logs it via UART. Use ThreadX APIs tx_thread_create, tx_thread_sleep, and tx_queue_send/receive to observe deterministic behavior. Compare the task timing with a similar setup using your current commercial RTOS.",
+      "key_concepts": [
+        "Deterministic pre‑emptive scheduling",
+        "Thread and timer primitives (tx_thread_create, tx_timer_create)",
+        "Inter‑task communication (queues, event flags, mutexes)",
+        "Memory management (byte pools, block pools)",
+        "Embedded middleware integration points"
+      ],
+      "interview_questions": [
+        "How does Eclipse ThreadX ensure deterministic task execution, and what metrics would you use to verify it on a VCU?",
+        "When integrating ThreadX with an AUTOSAR‑based VCU, which services must still be provided by AUTOSAR or external middleware, and why?"
+      ],
+      "next_step": "Clone the Eclipse ThreadX repository, build the demo for a supported evaluation board, and run the LED/CAN example while measuring task jitter with a logic analyzer.",
+      "category": "Embedded Runtime",
+      "source_title": "Eclipse ThreadX official documentation",
+      "source_url": "https://eclipse-threadx.github.io/threadx/",
+      "source": "Eclipse ThreadX",
+      "published": "",
+      "relevance_score": 10,
+      "generation_mode": "ai"
+    },
+    {
+      "id": "298bb67d1b8651d5",
+      "content_type": "industry",
+      "headline": "BMW, Mercedes‑Benz and Microsoft Discuss Automotive Software Verification Strategies",
+      "summary": "The event in Munich will feature BMW, Mercedes‑Benz and Microsoft presenting their approaches to proving automotive software. The focus is on safety‑critical verification and validation processes used in modern vehicle control units. Microsoft’s role suggests the inclusion of its development and cloud tools to support these activities.",
+      "why_it_matters": "VCU developers must align with industry‑wide safety processes such as ISO 26262, and the session highlights how leading OEMs integrate verification tooling into their workflows. Understanding Microsoft’s contributions can reveal how cloud‑based CI/CD and test automation can complement MATLAB/Simulink and CAN‑based environments for EV powertrain software.",
+      "key_concepts": [
+        "Functional safety and ISO 26262 compliance",
+        "Software verification & validation pipelines",
+        "Model‑based development integration with automated testing",
+        "Cloud‑enabled CI/CD and test orchestration (Microsoft tooling)",
+        "Safety‑critical diagnostics and traceability"
+      ],
+      "interview_questions": [
+        "Can you describe how you would set up a verification pipeline that satisfies ISO 26262 requirements for a VCU, and how you would incorporate both model‑based simulations and hardware‑in‑the‑loop tests?",
+        "How would you leverage cloud‑based tools (e.g., Azure DevOps) to improve traceability and regression testing for CAN‑based EV powertrain software?"
+      ],
+      "next_step": "Create a small CI/CD prototype that runs a Simulink model through unit tests, generates a safety traceability matrix, and publishes results to a cloud dashboard (e.g., Azure DevOps or GitHub Actions).",
+      "category": "Safety & Process",
+      "source_title": "BMW, Mercedes-Benz and Microsoft to Share How They Prove Automotive Software in Munich - autoelectronics.co.kr",
+      "source_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9IUTM3WDd4aHBta3R1ODl5ZnE5RGhIaTBMY0RWV0lyWm45TTg1OG5OZVZLRWhqYkUwOXNKM1dKdFdycUJUY2lGX3JCVkpJQUZJQmhTVDh4OE1kV2ZqdUcxbVVqOE5rbnowTzRSWWJscW1qVDh0?oc=5",
+      "source": "autoelectronics.co.kr",
+      "published": "2026-10-19T17:37:35+00:00",
+      "relevance_score": 1,
+      "generation_mode": "ai"
+    }
+  ]
+}

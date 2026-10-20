@@ -1,6 +1,21 @@
 {
-  "updated_at": "2026-10-19T01:26:18.959637+00:00",
+  "updated_at": "2026-10-20T01:57:04.676970+00:00",
   "runs": [
+    {
+      "generated_at": "2026-10-20T07:27:04.573260+05:30",
+      "ai_provider": "groq",
+      "article_count": 2,
+      "categories": [
+        "Embedded Runtime",
+        "Safety & Process"
+      ],
+      "sources": [
+        "Eclipse ThreadX",
+        "autoelectronics.co.kr"
+      ],
+      "path": "data/runs/ev_research_20261020_072704.json",
+      "filename": "ev_research_20261020_072704.json"
+    },
     {
       "generated_at": "2026-10-19T06:56:18.861673+05:30",
       "ai_provider": "groq",
